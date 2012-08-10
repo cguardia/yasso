@@ -198,7 +198,6 @@ class AuthorizeView(object):
             return response
 
 
-@forbidden_view_config()
 def basic_forbidden(request):
     realm = request.registry.settings.get('realm', request.host)
     auth_header = 'Basic realm="{0}"'.format(realm)
@@ -208,6 +207,9 @@ def basic_forbidden(request):
     else:
         return HTTPUnauthorized(headers=headers)
 
+@forbidden_view_config(renderer='yasso:login.pt')
+def login_view(request):
+    return request.params
 
 @view_config(context=AuthorizationServer, renderer='string')
 def default_view(request):

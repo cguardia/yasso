@@ -1,0 +1,10 @@
+<form action="/authorize">
+<input type="hidden" name="redirect_uri" value="${redirect_uri|''}" />
+<input type="hidden" name="client_id" value="${client_id|''}" />
+<input type="hidden" name="state" value="${state|''}" />
+<input type="hidden" name="scope" value="${scope|''}" />
+<input type="hidden" name="response_type" value="${response_type|''}" />
+Login: <input type="text" name="login" /><br />
+Password: <input type="password" name="password" /><br />
+<input type="submit" value="login" />
+</form>

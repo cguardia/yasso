@@ -10,6 +10,7 @@ requires = [
     'pyramid_who',
     'randenc',
     'repoze.who>=2.0',
+    'python-ldap',
 ]
 
 if sys.version_info[:2] < (2, 7):
